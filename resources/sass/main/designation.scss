@@ -1,0 +1,120 @@
+.landing{
+    .designation-container{
+        .tab-section {
+            color :$dark-gray;
+            
+            .features-section{
+                row-gap: 1rem;
+                .field-container{
+                    row-gap: 1rem;
+                    @include media-max-sm{
+                        width: 100%;
+                    }
+                }
+            }
+            .admin-input {
+                border: 1px solid $dark-gray;
+                border-radius: 5px;
+                background: transparent;
+                color:$dark-gray;
+                width:80%;
+                padding:5px 10px;
+            }
+            .addDesignationBtn{
+                #addDesignationModal {
+                    overflow: auto;
+                    .modal-dialog{
+                        margin: 20px auto;
+                        height: auto;
+                        @include media-min-md-x{
+                            height: 100vh;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+        #editDesignationModal{
+            overflow: auto;
+            .modal-dialog{
+                margin: 20px auto;
+                height: auto;
+                @include media-min-md-x{
+                    height: 100vh;
+                    margin: 0 auto;
+                }
+            }
+        }
+        #InActiveDesignationModal, #permanentDeleteDesignationModal, #UpdateInactiveDesignationModal,
+        #alreadyExistDesignationModal{
+            overflow: auto;
+            .modal-dialog{
+                .modal-content{
+                    width: 90%;
+                    @include media-min-md{
+                        width: 80%;
+                    }
+                    @include media-min-lg{
+                        width: 60%;
+                    }
+                    .modal-body{
+                        padding: 40px;
+                        span {
+                            animation: 1.4s zoom-in infinite ;
+                            animation-timing-function: ease-in-out;
+                            color: $red;
+                            .fa-6x{
+                                font-size: 4rem;
+                            }
+                        }
+                        .yes-btn{
+                            background-color: $green;
+                        }
+                        .no-btn{
+                            background-color: $gray;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                .table-container{
+                    max-height: 660px;
+                    .table .thead tr{
+                        th{
+                            text-align: center;
+                            min-width: 150px;
+                            font-size: 14px;
+                            @include media-min-md{
+                                font-size: 14.5px;
+                                min-width: 120px;
+                            }
+                            @include media-min-md-x{
+                                font-size: 14px;
+                                min-width: 140px;
+                            }
+                            @include media-min-lg{
+                                font-size: 15px;
+                                min-width: 230px;
+                            }
+                                @include media-min-xl{
+                                    min-width: 275px;
+                                }
+                        }
+                    }
+                    .table .tbody tr td{
+                        font-size: 12.5px;
+                        @include media-min-md{
+                            font-size: 13px;
+                        }
+                        @include media-min-lg{
+                            font-size: 14px;
+                        }
+                    } 
+
+                }
+            }
+        }
+    }
+}

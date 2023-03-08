@@ -1,0 +1,31 @@
+.select-box{
+    .entires-text{
+        font-size: 14px;
+        @include media-min-lg{
+            font-size: 15px;
+        }
+    }
+    .entires-select-option{
+        width: 65px;
+        @include media-min-lg{
+            width: 75px;
+        }
+        select {
+            padding: 4px 0px 4px 4px;
+            box-sizing: border-box;
+            background-color: white;
+            color:#5a5858;
+            border: 1px solid #c0bdbd;
+            border-radius: 5px;
+            font-size: 12px;
+            min-width: 65px;
+            height: 35px;
+            outline: none;
+            @include media-min-lg{
+                width: 70px;
+                font-size: 15px;
+                padding: 6px 0px 6px 6px;
+            }
+        }
+    }
+}
