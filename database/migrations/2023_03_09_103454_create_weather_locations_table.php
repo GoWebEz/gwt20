@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateWeatherLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('weather_locations', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('name', 50);
-            $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
+            $table->string('city', 50);
+            $table->string('state_code', 2);
+            $table->string('country_code', 2);
+            $table->string('country', 50);
+            $table->string('zmw', 20);
             $table->dateTime('created_at');
             $table->integer('created_by')->nullable()->comment('Created By User Id');
             $table->timestamp('updated_at');
@@ -31,6 +34,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('weather_locations');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateDeviceRefreshLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('device_refresh_logs', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('name', 50);
-            $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
+            $table->string('device_id', 30)->nullable()->comment('id from devices table refer only category 1');
+            $table->string('keycode', 30)->nullable();
+            $table->text('request_log')->nullable();
+            $table->text('response_log')->nullable();
             $table->dateTime('created_at');
             $table->integer('created_by')->nullable()->comment('Created By User Id');
             $table->timestamp('updated_at');
@@ -31,6 +33,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('device_refresh_logs');
     }
 }

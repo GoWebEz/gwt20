@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('name', 50);
+            $table->string('name', 20)->nullable();
+            $table->string('startup_hour', 20)->nullable();
+            $table->string('opening_hour', 20)->nullable();
+            $table->string('closing_hour', 20)->nullable();
+            $table->string('shutdown_hour', 20)->nullable();
+            $table->string('measurement', 20)->nullable();
+            $table->string('cost_per_measurement', 20)->nullable();
             $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
             $table->dateTime('created_at');
             $table->integer('created_by')->nullable()->comment('Created By User Id');
@@ -31,6 +37,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('clients');
     }
 }

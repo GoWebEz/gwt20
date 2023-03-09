@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateConservationHoursTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('conservation_hours', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->string('name', 50);
-            $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
+            $table->string('device_id', 30);
+            $table->string('hour', 50)->nullable();
+            $table->string('flow', 50)->nullable();
+            $table->string('flow_unit', 10)->nullable();
+            $table->string('max_leak_score', 50)->nullable();
             $table->dateTime('created_at');
             $table->integer('created_by')->nullable()->comment('Created By User Id');
             $table->timestamp('updated_at');
@@ -31,6 +34,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('conservation_hours');
     }
 }
