@@ -1,0 +1,70 @@
+.paginate-container{
+    padding: 18px 0;
+    .entries-text {
+        color: $light-gray;
+        font-size: 12px;
+        font-weight: 600;
+        @include media-min-md{
+            font-size: 15px;
+        }
+        @include media-min-xl{
+            font-size: 17px;
+        }
+    }
+    .pagination{
+        font-size: 12px;
+        @include media-min-xl{
+            font-size: 15px;
+        }
+        .disabled{
+            opacity: .5;
+        }
+        // .showingcard{
+        //     font-size: 11.5px;
+        // }
+        .page-item.active .page-link {
+            z-index: 1;
+            color: #ffffff;
+            background-color: $light-blue;
+        }
+        .page-item{
+            margin-left: 6px;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            @include media-min-sm{
+                margin-left: 8px;
+            }
+            @include media-min-lg{
+                margin-left: 12px;
+            }
+            .page-link{
+                color: $light-gray;
+                width: 30px;
+                height: 30px;
+                border: none;
+                border-radius: 50%;
+                padding: 0;
+                background-color: transparent;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 600;
+                @include media-min-md{
+                    width: 32px;
+                    height: 32px;
+                    font-size: 15px;
+                }
+                @include media-min-xl{
+                    width: 28px;
+                    height: 28px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @include media-min-lg{
+        padding: 23px 0;
+    }
+}

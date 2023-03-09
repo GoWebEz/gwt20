@@ -1,0 +1,91 @@
+
+$login_bg : '/images/auth-bg.png';
+$screen   : '/images/screen.png';
+.login-bg {
+   background: url($login_bg) no-repeat fixed center;
+   width :100%;
+   background-size: cover;
+   $font-family:$font-family;
+   .loader-container{
+    background-color: rgba(0, 0, 0, 0.49);
+    h3{
+        font-size: 26px;
+        font-weight: 300;
+    }
+   }
+   min-height: 100vh;
+   .logo_img {
+       width: 50%;
+   }
+   #login-form, #forgot-password, #reset-form{
+    label.error {
+        color: #dc3545;
+        font-size: 13px; 
+    }
+};
+   .login-bg-img {
+       background: url($screen) no-repeat ;
+       width :100%;
+       color: white;
+       background-size: 100% 100%;
+       height: 550px;
+   }
+   .buttons {
+        background-color:$green;
+        font-weight: 600;
+        padding: 10px;
+    }
+    .label {
+        color : $dark-gray;
+        font-size :17px;
+    }
+    input {
+        background-color: $water;
+        padding: 10px;
+    }
+    .password {
+        position : relative
+    }
+    .eye-icon {
+        position: absolute;
+        top:37px;
+        right:10px;
+        color :$gray
+    }
+    .forgot {
+        text-decoration: none;
+        font-size: 16px;
+    }
+}
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:rgba(0, 0, 0, 0.49);
+    z-index: 99999;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 

@@ -1,0 +1,105 @@
+// // Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// // Variables
+@import 'variables';
+
+@import './base.scss';
+// // auth
+@import './mixins/breakpoints.scss';
+@import './auth/auth.scss';
+@import './main/navbar.scss';
+@import './main/user.scss';
+@import "./main/client.scss";
+@import './main/verifiyEmail.scss';
+@import './main/location.scss';
+@import './main/device.scss';
+@import './main/userLocation.scss';
+@import "./main/designation.scss";
+@import "./main//global_setting.scss";
+@import "./main/waterConservationApiLog.scss";
+// base
+@import './base/table.scss';
+@import "./base/modal.scss";
+@import "./base/search.scss";
+@import "./base/title.scss";
+@import "./base/showEntries.scss";
+@import "./base/pagination.scss";
+@import "./base/tab.scss";
+@import "./main//deviceRefreshLogs.scss";
+@import "./main/home.scss";
+@import "./main/waterConsumption.scss";
+@import "./main/temperatureMaintenance.scss";
+@import "./main/deviceModeSetPoint.scss";
+@import "./main/rangeSlider.scss";
+@import "./base/animi.scss";
+@import "./base/multiSelect.scss";
+@import "./base/card.scss";
+@import "./base/flashLoader.scss";
+@import "./base/fullScreenLoader.scss";
+@import "./base/master.scss";
+
+//includes
+@import "./includes/footer.scss";
+@import "./includes/header.scss";
+
+body{
+
+    .css-26l3qy-menu{
+        z-index: 1999;
+    }
+    background-color: $body-bg;
+    // height: 100vh;
+    /* Start: Chrome & Safari style
+     ========================================= */
+    ::-webkit-scrollbar {
+        width:7px;
+        height:7px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: unset;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #6d6d6d80;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #6d6d6dde;
+    }
+   /* Start: Internet edge style
+    ========================================= */
+   ::-ms-scrollbar {
+       width:7px;
+       height:7px;
+   }
+   ::-ms-scrollbar-track {
+       background-color: unset;
+       border-radius: 10px;
+   }
+   ::-ms-scrollbar-thumb {
+       border-radius: 10px;
+       background: #6d6d6d80;
+   }
+   ::-ms-scrollbar-thumb:hover {
+       background: #6d6d6dde;
+   }
+   /* Start: Mozilla firefox style
+    ========================================= */
+   ::-moz-scrollbar {
+       width:7px;
+       height:7px;
+   }
+   ::-moz-scrollbar-track {
+       background-color: unset;
+       border-radius: 10px;
+   }
+   ::-moz-scrollbar-thumb {
+       border-radius: 10px;
+       background: #6d6d6d80;
+   }
+   ::-moz-scrollbar-thumb:hover {
+       background: #6d6d6dde;
+   }
+}
+

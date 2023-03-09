@@ -1,0 +1,120 @@
+.container {
+    max-width:1360px !important;
+    font-family: 'Roboto';
+    .back-button {
+        font-weight: 500;
+        padding: 0.4rem 1rem;
+        font-size: 13px;
+        background: #599360;
+        text-align: center;
+        text-transform: capitalize;
+        border: 1px solid #fff;
+    }
+    .header-bg {
+        background-color:#EEF2F1;
+        width: 100%;
+        border: 1px solid #d7e4d8;
+        .header-content {
+            @include media-min-md {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        .header-bg-select {
+            width: 245px;
+            background-color: transparent;
+            select{
+                height: 42px;
+                outline: none;
+                padding: 6px 22px 6px 8px;
+                border-radius: 5px;
+                background-color: #fff;
+                border: 1px solid gray !important;
+            }
+        }
+    }
+    .table-container{
+        .text-yellow{
+            color: orange;
+        }
+        .set-point{
+            button{
+                width: 23px;
+                height: 23px;
+                border-radius: 100%;
+                font-size: 12px;
+            }
+            .btn-top{
+                background: #BE272E;
+            }
+            .btn-bottom{
+                background: $green;
+            }
+            .input-field{
+                width: 35px;
+            }
+        }
+        .btn-go{
+            background: #5BC0DE;
+        }
+    }
+    .yes-btn{
+        background-color: $green;
+    }
+    .no-btn {
+        background-color: $gray;
+    }
+    #setModeModal{
+        overflow: auto;
+        .modal-dialog{
+            .modal-content{
+                width: 90%;
+                @include media-min-md{
+                    width: 80%;
+                }
+                @include media-min-lg{
+                    width: 60%;
+                }
+                .modal-body{
+                    padding: 40px;
+                    span {
+                        animation: 1.4s zoom-in infinite ;
+                        animation-timing-function: ease-in-out;
+                        color: $red;
+                        .fa-6x{
+                            font-size: 4rem;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    #locationModal, #setModeModal {
+        overflow: auto;
+        .modal-dialog{
+            .modal-content{
+                width: 90%;
+                @include media-min-md{
+                    width: 80%;
+                }
+                @include media-min-lg{
+                    width: 60%;
+                }
+                .modal-body{
+                    padding: 40px;
+                    span {
+                        animation: 1.4s zoom-in infinite ;
+                        animation-timing-function: ease-in-out;
+                        color: $red;
+                        .fa-6x{
+                            font-size: 4rem;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

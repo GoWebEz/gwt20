@@ -1,0 +1,38 @@
+.nav {
+    flex-wrap: nowrap !important;    
+}
+.nav-pills {
+    border: none;
+
+   .nav-item{
+    font-size: 17px !important;
+    color: #5a5858 !important;
+        .active{
+            border-bottom: 2px solid red;
+        }
+        .active-user, .inactive-user,.active-desgination, .inactive-designation,.active-client, .inactive-client {
+            font-weight: 600;
+            color: $dark-gray;
+            padding-bottom: 6px;
+            margin-right: 8px;
+            font-size:11px;
+            @include media-min-md {
+                font-size:15px;
+                margin-right: 28px;
+            }
+            i{
+                font-size: 12px;
+            }
+            @include media-min-xl{
+                padding-bottom: 6px;
+                margin-right: 25px;
+                i{
+                    font-size: 15px;
+                }
+            }
+        }
+        // .inactive-user, .inactive-designation,.active-client, .inactive-client{
+        //     margin-right: 0;
+        // }
+    }
+}

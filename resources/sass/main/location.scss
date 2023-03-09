@@ -1,0 +1,292 @@
+.location-container{
+    // .rc-time-picker-panel-select-option-selected {
+    //     background-color: #edeffe;
+    //     font-weight: normal;
+    //   }
+    
+    // .rc-time-picker-clear,
+    // .rc-time-picker-clear-icon:after {
+    //     font-size: 15px;
+    //   }
+    
+    // .rc-time-picker-panel-select,
+    // .rc-time-picker-input,
+    // .rc-time-picker-panel-input {
+    //     // font-family: "Consolas", sans-serif;
+    //     // font-size: 16px;
+    
+    //     ::-webkit-scrollbar {
+    //       width: 0;
+    //       height: 0;
+    //     }
+    //   }
+    // .rc-time-picker-input[disabled] {
+    //     color: #000 !important;
+    //     background: #e9ecef !important;
+    //     cursor: not-allowed;
+    // }
+    
+    .viewContent{
+        background-color: #f0f1ef;
+        font-family: 'Roboto';
+      }
+    .field-container{
+        .category-select{
+            border: 1px solid #cbb8b8;
+            border-radius: 4px;
+            padding: 9px 0px;
+            row-gap: 1rem;
+            @include media-max-sm{
+                width: 100%;
+            }
+        }
+    }
+    .tab-section {
+        color :$dark-gray;
+        .features-section{
+            row-gap: 1rem;
+            .search{
+                width: 100%;
+                @include media-min-sm{
+                    width: 173px;
+                    margin-right: 0.5rem;
+                }
+                    @include media-min-xl{
+                        width: 200px;
+                    }
+                        @include media-min-xl-x-xl{
+                            width: 265px;
+                        }
+            }
+            .category-select-dropdown{
+                select{
+                    width: 100%;
+                    background-color: white;
+                    color:#5a5858;
+                    border: 1px solid #c0bdbd;
+                    outline: none;
+                }
+            }
+            .field-container{
+                row-gap: 1rem;
+                @include media-max-sm{
+                    width: 100%;
+                }
+            }
+                
+
+
+
+        }
+        .nav{
+            @include media-min-lg{
+                margin-bottom: 1rem;
+            }
+            @include media-min-xl{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .addLocationBtn{
+        .add-btn{
+            font-weight: 500;
+            padding: .4rem 1rem;
+            font-size: 13px;
+            color: #fff;
+            background: $green;
+            cursor: hand;
+            text-align: center;
+            text-transform: capitalize;
+            border: 1px solid #fff;
+            position: relative;
+            overflow: hidden!important;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            z-index:10;
+        }
+        .add-btn:hover{
+            border: 1px solid $green;
+            color: #fff!important;
+            background: #34828e;
+        }
+        // .add-btn::before {
+        //     content: '';
+        //     width: 0%;
+        //     height: 100%;
+        //     display: block;
+        //     background: #34828e;
+        //     position: absolute;
+        //     -ms-transform: skewX(-20deg);
+        //     -webkit-transform: skewX(-20deg);
+        //     transform: skewX(-20deg);
+        //     left: -10%;
+        //     opacity: 1;
+        //     top: 0;
+        //     z-index: -12;
+        //     -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+        // -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+        // -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+        // transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+        //     box-shadow:2px 0px 14px rgba(0,0,0,.6);
+        // }
+        // .add-btn::after {
+        //     content: '';
+        //     width: 0%;
+        //     height: 100%;
+        //     display: block;
+        //     background: #80ffd3;
+        //     position: absolute;
+        //     -ms-transform: skewX(-20deg);
+        //     -webkit-transform: skewX(-20deg);
+        //     transform: skewX(-20deg);
+        //     left: -10%;
+        //     opacity: 0;
+        //     top: 0;
+        //     z-index: -15;
+        //     -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+        //     -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+        //     -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+        //     transition: all .4s cubic-bezier(.2,.95,.57,.99);
+        //     box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+        // }
+        // .add-btn:hover::before, .add-btn:hover::before{
+        //     opacity:1;
+        //     width: 116%;
+        // }
+        // .add-btn:hover::after, .add-btn:hover::after{
+        //     opacity:1;
+        //     width: 120%;
+        // }
+        #addLocationModal {
+            overflow: auto;
+            .modal-dialog{
+                margin: 20px auto;
+                height: auto;
+                @include media-min-md-x{
+                    height: 100vh;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    .table-container{
+        max-height: 660px;
+        .table .thead tr th{
+            min-width: 110px;
+            &:last-child{
+                min-width: 100px;
+            }
+        }
+        .table .tbody tr td{
+            &:last-child{
+                // min-width: 185px;
+                text-align: center;
+            }
+            &:nth-child(2),&:nth-child(5), &:nth-child(6){
+                min-width: 100px;
+            }
+            .icon{
+                cursor: pointer;
+            }
+        }
+    }
+    #editLocationModal{
+        overflow: auto;
+        .modal-dialog{
+            margin: 20px auto;
+            height: auto;
+            @include media-min-md-x{
+                height: 100vh;
+                margin: 0 auto;
+            }
+        }
+    }
+    #deleteLocationModal, #editActiveLocationModal, #deletePermanentLocationModal{
+        overflow: auto;
+        .modal-dialog{
+            // margin: 20px auto;
+            // height: auto;
+            // @include media-min-md-x{
+            //     height: 100vh;
+            //     margin: 0 auto;
+            // }
+            .modal-content{
+                width: 90%;
+                @include media-min-md{
+                    width: 80%;
+                }
+                @include media-min-lg{
+                    width: 60%;
+                }
+                .modal-body{
+                    padding: 40px;
+                    span {
+                        animation: 1.4s zoom-in infinite ;
+                        animation-timing-function: ease-in-out;
+                        color: $red;
+                        .fa-6x{
+                            font-size: 4rem;
+                        }
+                    }
+                    .yes-btn{
+                        background-color: $green;
+                    }
+                    .no-btn{
+                        background-color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rc-time-picker{
+    width: 100%;
+    padding: 0;
+    .rc-time-picker-input{
+        padding: .375rem 0.75rem;
+        height: unset;
+        // font-family: 'Nunito', sans-serif;
+        font-size: 0.9rem;
+        border: none;
+        color:black;
+        line-height: 1.6;
+        outline: none;
+    }
+     .rc-time-picker-input[disabled] {
+        color: #000 !important;
+        background: #e9ecef !important;
+        cursor: not-allowed;
+    }
+    .rc-time-picker-clear{
+        top: 7px;
+    }
+}
+
+
+.rc-time-picker-panel-select-option-selected {
+    background-color: #edeffe;
+    font-weight: normal;
+  }
+
+.rc-time-picker-clear,
+.rc-time-picker-clear-icon:after {
+    font-size: 15px;
+  }
+ 
+.rc-time-picker-panel-select,
+.rc-time-picker-input,
+.rc-time-picker-panel-input {
+    scrollbar-width: none;
+    &::-moz-scrollbar{
+        width: 0;
+        height: 0;
+      }
+    &::-webkit-scrollbar{
+      width: 0;
+      height: 0;
+    }
+    
+  }
