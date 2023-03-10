@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\BaywebActivity;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class BaywebActivitySeeder extends Seeder
 {
@@ -23,8 +24,7 @@ class BaywebActivitySeeder extends Seeder
 
         ];
 
-        foreach ($activities as $key => $activity) {
-            BaywebActivity::create($activity);
-        }
+         DB::table('bayweb_activities')->insert($activities);
+
     }
 }

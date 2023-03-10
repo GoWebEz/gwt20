@@ -17,9 +17,9 @@ class CreateBaywebActivitiesTable extends Migration
             $table->integer('id')->autoIncrement();
             $table->integer('activity_code');
             $table->string('current_activity', 30);
-            $table->dateTime('created_at');
+            $table->dateTime('created_at')->useCurrent();
             $table->integer('created_by')->nullable()->comment('Created By User Id');
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->useCurrent();
             $table->integer('updated_by')->nullable()->comment('Updated By User Id');
         });
     }

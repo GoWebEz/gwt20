@@ -26,9 +26,9 @@ class CreateUsersTable extends Migration
             $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
             $table->string('token', 50)->nullable();
             $table->string('token_expiry', 50)->nullable();
-            $table->dateTime('created_at');
+            $table->timestamp('created_at')->useCurrent();
             $table->integer('created_by')->nullable()->comment('Created By User Id');
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->useCurrent();
             $table->integer('updated_by')->nullable()->comment('Updated By User Id');
         });
     }

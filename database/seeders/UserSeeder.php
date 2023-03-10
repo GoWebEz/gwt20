@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::truncate();
-        User::create([
+        $users=([
             'role_id' => '1',
             'name' => 'admin',
             'first_name' => 'admin',
@@ -25,5 +26,8 @@ class UserSeeder extends Seeder
             'phone' => '(188) 627-8752',
             'designation_id' => '1',
         ]);
+
+        DB::table('users')->insert($users);
+
     }
 }

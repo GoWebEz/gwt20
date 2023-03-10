@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Designation;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DesignationSeeder extends Seeder
 {
@@ -25,8 +26,7 @@ class DesignationSeeder extends Seeder
             ["code" => "7", "name" => "Administator","role_id" => "1"],
         ];
 
-        foreach ($designations as $key => $designation) {
-            Designation::create($designation);
-        }
-    }
+        DB::table('designations')->insert($designations);
+
+     }
 }
