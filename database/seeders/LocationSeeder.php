@@ -40,9 +40,5 @@ class LocationSeeder extends Seeder
         ];
 
         DB::table('locations')->insert($location);
-
-        // foreach ($location as $key => $locations) {
-        //     Location::create($locations);
-        // }
     }
 }

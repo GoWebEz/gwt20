@@ -70,9 +70,5 @@ class StateSeeder extends Seeder
         ];
 
         DB::table('states')->insert($usStates);
-
-        // foreach ($usSatates as $key => $state) {
-        //     State::create($state);
-        // }
     }
 }

@@ -21,9 +21,5 @@ class CategorySeeder extends Seeder
             ["name" => "Water Watch"]
         ];
         DB::table('categories')->insert($categories);
-
-        // foreach ($categories as  $category) {
-        //     Category::create($category);
-        // }
     }
 }

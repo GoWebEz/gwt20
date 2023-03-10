@@ -22,9 +22,5 @@ class RoleSeeder extends Seeder
         ];
 
         DB::table('roles')->insert($roles);
-
-        // foreach ($roles as $key => $role) {
-        //     Role::create($role);
-        // }
     }
 }
