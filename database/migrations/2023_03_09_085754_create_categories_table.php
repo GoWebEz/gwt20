@@ -16,9 +16,9 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('name', 50)->nullable();
-            $table->dateTime('created_at');
+            $table->dateTime('created_at')->useCurrent();
             $table->integer('created_by')->nullable()->comment('Created By User Id');
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->useCurrent();
             $table->integer('updated_by')->nullable()->comment('Updated By User Id');
         });
     }

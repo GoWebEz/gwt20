@@ -15,15 +15,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        // $this->call(CategorySeeder::class);
+        $this->call(CategorySeeder::class);
         $this->call(StateSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(DesignationSeeder::class);
         $this->call(UserSeeder::class);
-        // $this->call(LocationSeeder::class);
+        $this->call(LocationSeeder::class);
         $this->call(BaywebActivitySeeder::class);
-        // $this->call(WeatherLocationsSeeder::class);
+        $this->call(WeatherLocationSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
     }
 }

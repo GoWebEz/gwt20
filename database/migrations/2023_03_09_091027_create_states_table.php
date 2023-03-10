@@ -18,10 +18,6 @@ class CreateStatesTable extends Migration
             $table->string('name', 22);
             $table->string('code', 2);
             $table->string('time_zone', 50);
-            $table->dateTime('created_at');
-            $table->integer('created_by')->nullable()->comment('Created By User Id');
-            $table->timestamp('updated_at');
-            $table->integer('updated_by')->nullable()->comment('Updated By User Id');
         });
     }
 

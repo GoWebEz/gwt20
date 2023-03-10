@@ -20,10 +20,6 @@ class CreateWeatherLocationsTable extends Migration
             $table->string('country_code', 2);
             $table->string('country', 50);
             $table->string('zmw', 20);
-            $table->dateTime('created_at');
-            $table->integer('created_by')->nullable()->comment('Created By User Id');
-            $table->timestamp('updated_at');
-            $table->integer('updated_by')->nullable()->comment('Updated By User Id');
         });
     }
 

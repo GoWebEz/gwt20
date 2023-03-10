@@ -32,9 +32,9 @@ class CreateLocationsTable extends Migration
             $table->string('cost_per_measurement', 20)->nullable();
             $table->boolean('is_location_changed')->default(0)->comment('0 = location is not changed, 1 = location is changed');
             $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
-            $table->dateTime('created_at');
+            $table->dateTime('created_at')->useCurrent();
             $table->integer('created_by')->nullable()->comment('Created By User Id');
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->useCurrent();
             $table->integer('updated_by')->nullable()->comment('Updated By User Id');
         });
     }
