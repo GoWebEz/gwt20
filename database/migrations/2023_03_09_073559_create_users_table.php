@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name', 20)->nullable();
             $table->string('last_name', 20)->nullable();
             $table->string('email', 20)->unique();
-            $table->string('password', 20)->nullable();
+            $table->string('password', 100)->nullable();
             $table->string('phone', 20)->nullable();
             $table->integer('designation_id')->comment('Foreign key from designations');
             $table->boolean('is_active')->default(1)->comment('1-Active & 0-Inactive');
