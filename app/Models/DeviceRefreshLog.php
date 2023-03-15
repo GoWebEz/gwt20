@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DeviceRefreshLog extends Model
 {
     use HasFactory;
+    protected $table = 'device_refresh_logs';
+    protected $guarded = [];
 }

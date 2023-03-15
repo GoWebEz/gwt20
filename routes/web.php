@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\BaywebController;
+use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,12 +36,19 @@ Route::post('/update-password', [LoginController::class, 'updateNewPassword'])->
 Route::get('/verify-email', [LoginController::class, 'emailVerify'])->name('verify-email');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/home', function () { return view('home');})->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', function () {
+        return view('home'); }
+    )->name('home');
     Route::get('/admin/user', [UserController::class, 'index']);
-    Route::get('/admin/client',[ClientController::class,'index']);
-    Route::get('/admin/device', function () {return view('admin.device');});
-    Route::get('/admin/location', function () {return view('admin.location');});
-    Route::get('/admin/designations', [DesignationController::class,'index']);
+    Route::get('/admin/client', [ClientController::class, 'index']);
+    Route::get('/admin/device', function () {
+        return view('admin.device'); }
+    );
+    Route::get('/admin/location', function () {
+        return view('admin.location'); }
+    );
+    Route::get('/admin/designations', [DesignationController::class, 'index']);
+    Route::get('/energymanagement', [BaywebController::class, 'index']);
+    Route::get('/admin/designations', [DesignationController::class, 'index']);
 });
-

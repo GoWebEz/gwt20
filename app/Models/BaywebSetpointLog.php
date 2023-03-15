@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ModeSetpointLog extends Model
+class BaywebSetpointLog extends Model
 {
     use HasFactory;
     protected $table = 'bayweb_setpoint_logs';

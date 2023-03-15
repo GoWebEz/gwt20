@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\DeviceLogHelper;
 use App\Http\Controllers\Controller;
+use App\Models\BaywebSetpointLog;
 use App\Models\Device;
 use App\Models\GlobalSetting;
 use App\Models\Location;
@@ -217,7 +218,7 @@ class BaywebController extends Controller
                     'future_setpoint' => $baywebSetPoint,
                 ]);
 
-            $insert = ModeSetpointLog::create([
+            $insert =  BaywebSetpointLog::create([
                 'device_id' => $deviceId,
                 'location_id' => $locationId,
                 'previous_mode' => $previousModeId,
