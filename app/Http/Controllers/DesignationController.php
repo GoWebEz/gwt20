@@ -27,13 +27,7 @@ class DesignationController extends Controller
             $inActiveDesignation = $designationData->where('is_active',  0)->paginate(2);
             $designationDetails['active'] = $activeDesignation;
             $designationDetails['in_active'] = $inActiveDesignation;
-            // dd($designationDetails);
-            return view('admin.designations',['designationDetails' => $designationDetails]);
-            // return view('pages.designations', ['designationDetails' => $designationDetails]);
-            // return response()->json([
-            //     'status' => 'success',
-            //     'response' => $designationDetails
-            // ], 200);
+            return view('admin.designation',['designationDetails' => $designationDetails]);
         } catch (Exception $e) {
             Log::error($e->getMessage() . "\n" . __FILE__ . ' in ' . __LINE__);
             return response()->json([
@@ -224,7 +218,7 @@ class DesignationController extends Controller
                 "code" => "GWT-LOCATION-05",
             ], 500);
         }
-        return resp/onse()->json([
+        return response()->json([
             "status" => 'Success',
             "message" => 'Designation has been inactivated successfully.',
             "response" => True,

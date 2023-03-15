@@ -75,18 +75,18 @@
                                         class="nav-link text-white"><span class="pe-2"><i
                                                 class="fa-solid fa-lock"></i></span>ADMIN</span>
                                     <ul class="dropdown shadow">
-                                        <li class=""><a class="text-dark" href="/admin/user">Users</a></li>
+                                        <li class="activeMenu"><a class="text-dark active" href="/admin/user">Users</a></li>
                                         <li class=""><a class="text-dark" href="/admin/client">Clients</a></li>
                                         <li class=""><a class="text-dark" href="/admin/device">Devices</a>
                                         </li>
                                         <li class=""><a class="text-dark" href="/admin/location">Locations</a>
                                         </li>
                                         <li class=""><a class="text-dark"
-                                                href="/admin/designations.html" aria-current="page">Designations</a>
+                                                href="/admin/designation" aria-current="page">Designations</a>
                                         </li>
                                         <li class=""><a class="text-dark" href="/admin/user-location">User
                                                 Locations</a></li>
-                                        <li class=""><a class="text-dark" href="/admin/global-settings">Global
+                                        <li class=""><a class="text-dark" href="/admin/global-setting">Global
                                                 Settings</a></li>
                                         <li class=""><a class="text-dark" href="/admin/deviceRefreshLogs">Device
                                                 Refresh Logs</a></li>
