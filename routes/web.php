@@ -1,6 +1,6 @@
 <?php
-
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -40,7 +40,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/admin/client',[ClientController::class,'index']);
     Route::get('/admin/device', function () {return view('admin.device');});
     Route::get('/admin/location', function () {return view('admin.location');});
+    Route::get('/admin/designations', [DesignationController::class,'index']);
 });
-// Route::group(['middleware' => 'auth'], function() {
-//     Route::get('/client', function () { return view('pages.client');})->name('client');
-// });
+

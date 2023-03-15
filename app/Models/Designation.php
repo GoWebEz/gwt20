@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Designation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'designation_name',
-        'designation_code',
+        'name',
+        'code',
         'role_id'
     ];
 
@@ -21,6 +23,6 @@ class Designation extends Model
     }
     public function role()
     {
-        return $this->belongsto(Role::class, 'role_id', 'id');
+        return $this->belongsto(Role::class, 'role_id', 'id','name');
     }
 }
