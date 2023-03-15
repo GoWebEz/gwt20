@@ -91,10 +91,10 @@
                                         <li class=""><a class="text-dark" href="/admin/deviceRefreshLogs">Device
                                                 Refresh Logs</a></li>
                                         <li class=""><a class="text-dark"
-                                                href="/admin/waterConservationApiLogs">Water Conservation Api
+                                                href="/admin/water-conservation-log">Water Conservation Api
                                                 Logs</a></li>
                                         <li class=""><a class="text-dark"
-                                                href="/admin/deviceModeSetpointLogs">Device Mode Setpoint
+                                                href="/admin/device-setpoint-log">Device Mode Setpoint
                                                 Logs</a></li>
                                         <li><a class="text-dark" data-bs-toggle="modal"
                                                 data-bs-target="#changePasswordModal"

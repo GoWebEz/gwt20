@@ -43,6 +43,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/global-setting', function () {return view('admin.global_setting');});
 
+    Route::get('/admin/device-setpoint-log', function () {return view('admin.device_setpoint_log');});
+
+    Route::get('/admin/water-conservation-log', function () {return view('admin.water_conservation_log');});
+
     Route::get('/admin/designation', [DesignationController::class,'index']);
 
     Route::get('/energymanagement', [BaywebController::class, 'index']);
