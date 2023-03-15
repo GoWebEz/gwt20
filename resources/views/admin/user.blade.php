@@ -156,64 +156,40 @@
                                     </tr>
                                 </thead>
                                 <tbody class="tbody">
-                                    {{-- <tr class="text-center">
-                                        <td role="false" value="full_name" data-bs-toggle="false"
-                                            data-bs-target="false" title="">Admin User</td>
-                                        <td role="false" value="user_name" data-bs-toggle="false"
-                                            data-bs-target="false" title="">sakthi</td>
-                                        <td role="false" value="email" data-bs-toggle="false"
-                                            data-bs-target="false" title="">sakthi@sakthi.io</td>
-                                        <td role="false" value="designation_name" data-bs-toggle="false"
-                                            data-bs-target="false" title="">Administator</td>
-                                        <td role="false" value="role_name" data-bs-toggle="false"
-                                            data-bs-target="false" title="">Admin</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center"><button
-                                                    class="icon btn shadow-none d-flex justify-content-center align-items-center me-2"
-                                                    data-bs-toggle="modal" data-bs-placement="top"
-                                                    title="Click here to edit sakthi"
-                                                    data-bs-target="#editUserModal" id="edit-modal-user"><svg
-                                                        width="13" height="18" viewBox="0 0 25 25" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                            d="M12.336 13.8404L10.686 14.0764H10.684L10.92 12.4264L21.058 2.29236C21.1502 2.19685 21.2606 2.12067 21.3826 2.06826C21.5046 2.01585 21.6358 1.98826 21.7686 1.98711C21.9014 1.98596 22.0331 2.01126 22.156 2.06154C22.2789 2.11182 22.3905 2.18607 22.4844 2.27996C22.5783 2.37386 22.6525 2.48551 22.7028 2.60841C22.7531 2.7313 22.7784 2.86298 22.7773 2.99576C22.7761 3.12854 22.7485 3.25976 22.6961 3.38176C22.6437 3.50377 22.5675 3.61411 22.472 3.70636L12.336 13.8404ZM24.5368 1.84987C24.3859 1.48576 24.1648 1.15496 23.886 0.876359V0.87836C23.3234 0.315946 22.5605 0 21.765 0C20.9695 0 20.2066 0.315946 19.644 0.87836L9.272 11.2484C9.11925 11.4016 9.0203 11.6002 8.99 11.8144L8.518 15.1144C8.49591 15.2682 8.50996 15.425 8.55904 15.5724C8.60812 15.7198 8.69087 15.8538 8.80074 15.9636C8.9106 16.0735 9.04455 16.1562 9.19197 16.2053C9.33938 16.2544 9.49621 16.2684 9.65 16.2464L12.95 15.7744C13.1645 15.7435 13.3631 15.6438 13.516 15.4904L23.886 5.12036C24.1648 4.84176 24.3859 4.51096 24.5368 4.14685C24.6877 3.78275 24.7654 3.39249 24.7654 2.99836C24.7654 2.60423 24.6877 2.21397 24.5368 1.84987ZM22.2929 12.0492C22.1054 12.2368 22 12.4911 22 12.7563V22.7563H2V2.75635H12C12.2652 2.75635 12.5196 2.65099 12.7071 2.46345C12.8946 2.27592 13 2.02156 13 1.75635C13 1.49113 12.8946 1.23678 12.7071 1.04924C12.5196 0.861705 12.2652 0.756348 12 0.756348H1C0.734784 0.756348 0.48043 0.861705 0.292893 1.04924C0.105357 1.23678 0 1.49113 0 1.75635V23.7563C0 24.0216 0.105357 24.2759 0.292893 24.4635C0.48043 24.651 0.734784 24.7563 1 24.7563H23C23.2652 24.7563 23.5196 24.651 23.7071 24.4635C23.8946 24.2759 24 24.0216 24 23.7563V12.7563C24 12.4911 23.8946 12.2368 23.7071 12.0492C23.5196 11.8617 23.2652 11.7563 23 11.7563C22.7348 11.7563 22.4804 11.8617 22.2929 12.0492Z"
-                                                            fill="#0E38CE"></path>
-                                                    </svg></button><button type="submit"
-                                                    class="icon btn shadow-none d-flex justify-content-center align-items-center"
-                                                    data-bs-toggle="modal"
-                                                    title="Click here to inactivate sakthi"
-                                                    data-bs-target="#deleteUserModal"><img
-                                                        src="/images/inactive user.svg?9c40c0835cfeda17dbdb18e1a0da2394"
-                                                        alt="Icon" width="55%"></button></div>
-                                        </td>
-                                    </tr> --}}
+                                    @foreach ($userDetails['active'] as $user)
+                                            <tr class="text-center">
+                                                <td>{{ $user->first_name }} {{ $user->last_name }}</td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->designation->name }}</td>
+                                                <td>{{ $user->role->name }}</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center"><button
+                                                            class="icon btn shadow-none d-flex justify-content-center align-items-center me-2"
+                                                            data-bs-toggle="modal" data-id="{{ $user->id }}"
+                                                            data-bs-placement="top" title="Click here to edit sakthi"
+                                                            data-bs-target="#editUserModal" id="edit-modal-user"><svg
+                                                                width="13" height="18" viewBox="0 0 25 25"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M12.336 13.8404L10.686 14.0764H10.684L10.92 12.4264L21.058 2.29236C21.1502 2.19685 21.2606 2.12067 21.3826 2.06826C21.5046 2.01585 21.6358 1.98826 21.7686 1.98711C21.9014 1.98596 22.0331 2.01126 22.156 2.06154C22.2789 2.11182 22.3905 2.18607 22.4844 2.27996C22.5783 2.37386 22.6525 2.48551 22.7028 2.60841C22.7531 2.7313 22.7784 2.86298 22.7773 2.99576C22.7761 3.12854 22.7485 3.25976 22.6961 3.38176C22.6437 3.50377 22.5675 3.61411 22.472 3.70636L12.336 13.8404ZM24.5368 1.84987C24.3859 1.48576 24.1648 1.15496 23.886 0.876359V0.87836C23.3234 0.315946 22.5605 0 21.765 0C20.9695 0 20.2066 0.315946 19.644 0.87836L9.272 11.2484C9.11925 11.4016 9.0203 11.6002 8.99 11.8144L8.518 15.1144C8.49591 15.2682 8.50996 15.425 8.55904 15.5724C8.60812 15.7198 8.69087 15.8538 8.80074 15.9636C8.9106 16.0735 9.04455 16.1562 9.19197 16.2053C9.33938 16.2544 9.49621 16.2684 9.65 16.2464L12.95 15.7744C13.1645 15.7435 13.3631 15.6438 13.516 15.4904L23.886 5.12036C24.1648 4.84176 24.3859 4.51096 24.5368 4.14685C24.6877 3.78275 24.7654 3.39249 24.7654 2.99836C24.7654 2.60423 24.6877 2.21397 24.5368 1.84987ZM22.2929 12.0492C22.1054 12.2368 22 12.4911 22 12.7563V22.7563H2V2.75635H12C12.2652 2.75635 12.5196 2.65099 12.7071 2.46345C12.8946 2.27592 13 2.02156 13 1.75635C13 1.49113 12.8946 1.23678 12.7071 1.04924C12.5196 0.861705 12.2652 0.756348 12 0.756348H1C0.734784 0.756348 0.48043 0.861705 0.292893 1.04924C0.105357 1.23678 0 1.49113 0 1.75635V23.7563C0 24.0216 0.105357 24.2759 0.292893 24.4635C0.48043 24.651 0.734784 24.7563 1 24.7563H23C23.2652 24.7563 23.5196 24.651 23.7071 24.4635C23.8946 24.2759 24 24.0216 24 23.7563V12.7563C24 12.4911 23.8946 12.2368 23.7071 12.0492C23.5196 11.8617 23.2652 11.7563 23 11.7563C22.7348 11.7563 22.4804 11.8617 22.2929 12.0492Z"
+                                                                    fill="#0E38CE"></path>
+                                                            </svg></button><button type="submit"
+                                                            class="icon btn shadow-none d-flex justify-content-center align-items-center"
+                                                            data-bs-toggle="modal" title="Click here to inactivate sakthi"
+                                                            data-bs-target="#deleteUserModal"><img
+                                                                src="images/inactive user.svg" alt="Icon"
+                                                                width="55%"></button></div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <div  class="paginate-container d-flex flex-column flex-sm-row justify-content-between align-items-center">
-                            {{-- <div
-                                class=" entries-text  d-flex justify-content-start align-items-center pb-2 pb-sm-0  undefined">
-                                Showing 1 to 1 of 1 Entries</div>
-                            <div
-                                class="pagination-container d-flex justify-content-center justify-content-sm-end align-items-center">
-                                <ul class="pagination align-items-center border-0 mb-0">
-                                    <li class="previous-btn  page-item disabled"><a
-                                            class="previous-btn d-flex justify-content-center align-items-center page-link"><i
-                                                class="fa-solid fa-angles-left"></i></a></li>
-                                    <li class="previous-btn  page-item disabled"><a
-                                            class="previous-btn d-flex justify-content-center align-items-center page-link"><i
-                                                class="fa-solid fa-chevron-left"></i></a></li>
-                                    <li class="page-item active card-show"><a
-                                            class="page-link d-flex justify-content-center align-items-center">1</a>
-                                    </li>
-                                    <li class="next-btn page-item disabled"><a
-                                            class="next-btn d-flex justify-content-center align-items-center page-link"><i
-                                                class="fa-solid fa-chevron-right"></i></a></li>
-                                    <li class="next-btn page-item disabled"><a
-                                            class="next-btn d-flex justify-content-center align-items-center page-link"><i
-                                                class="fa-solid fa-angles-right"></i></a></li>
-                                </ul>
-                            </div> --}}
+                            <p>Showing {{ $userDetails['active']->firstItem() }} to {{ $userDetails['active']->lastItem() }} of {{ $userDetails['active']->total() }} entries</p>
+                                
+                            {{$userDetails['active']->links() }}
                         </div>
                     </div>
                     <div class="tab-pane fade undefined" id="inActive" role="tabpanel"
