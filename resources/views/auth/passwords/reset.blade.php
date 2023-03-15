@@ -2,9 +2,6 @@
 
 @section('content')
 <div id="root">
-  <?php
-    dd(request.GET('t'));
-    ?>
   <div class="login-bg py-5 py-lg-0 d-lg-flex align-items-center">
       <div class="container">
           <div class="card shadow">

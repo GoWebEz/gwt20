@@ -22,20 +22,20 @@ class ClientController extends Controller
     public function index()
     {
 
-        try {
+        // try {
             $activeClient = Client::where('is_active', 1)->paginate(1);
             $inactiveClient = Client::where('is_active',  0)->paginate(1);
             $clientDetails['active'] = $activeClient;
             $clientDetails['in_active'] = $inactiveClient;
-            return view('pages.client', ['client_details' => $clientDetails]);
-        } catch (Exception $e) {
-            return response()->json([
-                "timestamp"     => Carbon::now('UTC')->toDateTimeString(),
-                "error"         => "Database Error",
-                "message"       => "Unable to get the client details.",
-                "code"          => "GWT-DESIGNATION-01",
-            ], 500);
-        }
+            return view('admin.client', ['client_details' => $clientDetails]);
+        // } catch (Exception $e) {
+        //     return response()->json([
+        //         "timestamp"     => Carbon::now('UTC')->toDateTimeString(),
+        //         "error"         => "Database Error",
+        //         "message"       => "Unable to get the client details.",
+        //         "code"          => "GWT-DESIGNATION-01",
+        //     ], 500);
+        // }
     }
 
     /**

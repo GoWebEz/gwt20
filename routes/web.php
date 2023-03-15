@@ -27,7 +27,10 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', function () { return view('home');})->name('home');
-    Route::get('/client',[ClientController::class,'index']);
+    Route::get('/admin/user', function () {return view('admin.user');});
+    Route::get('/admin/client',[ClientController::class,'index']);
+    Route::get('/admin/device', function () {return view('admin.device');});
+    Route::get('/admin/location', function () {return view('admin.location');});
 });
 // Route::group(['middleware' => 'auth'], function() {
 //     Route::get('/client', function () { return view('pages.client');})->name('client');

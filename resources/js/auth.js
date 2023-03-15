@@ -21,7 +21,7 @@ $(document).ready(function () {
     $('#login-form').validate({
         rules: {
             // input fields
-            user_name: {
+            name: {
                 required: true,
             },
             password: {
@@ -30,7 +30,7 @@ $(document).ready(function () {
         },
         // input fields error mesaages
         messages: {
-            user_name: {
+            name: {
                 required: 'Username is required.',
             },
             password: {
@@ -128,25 +128,27 @@ $(document).ready(function () {
             return;
         }
         $('.loader-container').removeClass('d-none');
-        $.ajax({
-            url: '/login',
-            type: 'POST',
-            data: $("#login-form").serialize(),
-            dataType: 'JSON',
-            async: false
-        }).done(function (response) {
-            $('.loader-container').addClass('d-none');
-            if (response['status'] == 'Success') {
-                toastr.success(response['message']);
-                window.location.href = '/home';
-            }
-            if (response['status'] == 'error') {
-                toastr.error(response['message']);
-            }
-        }).fail(function (error) {
-            $('.loader-container').addClass('d-none');
-            toastr.error(error['message']);
-        })
+        setTimeout(function(){
+            $.ajax({
+                url: '/login',
+                type: 'POST',
+                data: $("#login-form").serialize(),
+                dataType: 'JSON',
+                async: false
+            }).done(function (response) {
+                $('.loader-container').addClass('d-none');
+                if (response['status'] == 'Success') {
+                    toastr.success(response['message']);
+                    window.location.href = '/home';
+                }
+                if (response['status'] == 'error') {
+                    toastr.error(response['message']);
+                }
+            }).fail(function (error) {
+                $('.loader-container').addClass('d-none');
+                toastr.error(error['message']);
+            })
+        },1000)
     });
 
     $('.forgot-password').on('click', function (e) {
@@ -155,30 +157,32 @@ $(document).ready(function () {
             return;
         }
         $('.loader-container').removeClass('d-none');
-        $.ajax({
-            url: '/password-reset',
-            type: 'POST',
-            data: $("#forgot-password").serialize(),
-            dataType: 'JSON',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            async: false
-        }).done(function (response) {
-            $('.loader-container').addClass('d-none');
-            if (response['status'] == 'Success') {
-                toastr.success(response['message']);
-                window.location.href = '/thankyou';
-            }
-            if (response['status'] == 'error') {
-                console.log('d');
-                toastr.error(response['message']);
-            }
-        }).fail(function (error) {
-            $('.loader-container').addClass('d-none');
-            toastr.error(error['message']);
-        })
-
+        setTimeout(function(){
+            $.ajax({
+                url: '/password-reset',
+                type: 'POST',
+                data: $("#forgot-password").serialize(),
+                dataType: 'JSON',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                async: false
+            }).done(function (response) {
+                $('.loader-container').addClass('d-none');
+                if (response['status'] == 'Success') {
+                    console.log('dd');
+                    toastr.success(response['message']);
+                    window.location.href = '/thankyou';
+                }
+                if (response['status'] == 'error') {
+                    $('.loader-container').addClass('d-none');
+                    toastr.error(response['message']);
+                }
+            }).fail(function (error) {
+                $('.loader-container').addClass('d-none');
+                toastr.error(error['message']);
+            }) 
+        },1000)
     })
 
     $('.reset-password').on('click', function (e) {
@@ -186,6 +190,7 @@ $(document).ready(function () {
         if (!$('#reset-form').valid()) {
             return;
         }
+        
         $('.loader-container').removeClass('d-none');
         $.ajax({
             url: '/update-password',
