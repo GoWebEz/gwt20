@@ -14,8 +14,7 @@ class CreateDevicesTable extends Migration
     public function up()
     {
         Schema::create('devices', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('device_id', 20)->nullable();
+             $table->string('id', 30)->unique();
             $table->integer('category_id')->nullable();
             $table->string('client_name', 50)->nullable()->comment('client name from water conservation api');
             $table->string('status', 50)->nullable();

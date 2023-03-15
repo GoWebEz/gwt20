@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BaywebActivity extends Model
 {
     use HasFactory;
+    protected $table = 'bayweb_activities';
+    protected $guarded = [];
 }
