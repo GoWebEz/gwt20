@@ -19,21 +19,21 @@ class LoginController extends Controller
     |
      */
 
-    public function __construct() { 
+    public function __construct() {
         $this->middleware('guest')->except('logout');
     }
-    /* Login Function */ 
+    /* Login Function */
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'user_name' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
             return response(['errors' => $validator->errors()->all()], 422);
         }
 
-        $credentials = $request->only('user_name', 'password');
+        $credentials = $request->only('name', 'password');
         if (Auth::attempt($credentials)) {
             $response = [
                 "status"    => "Success",
@@ -51,14 +51,14 @@ class LoginController extends Controller
         }
     }
 
-    /* Forgot Password Function */ 
+    /* Forgot Password Function */
     // public function forgotPassword(Request $request)
-    // {       
+    // {
     //     $validator = Validator::make($request->all(), [
     //         'name_email' => 'required',
     //         'last_name' => 'required',
     //     ]);
-        
+
     //     if ($validator->fails()) {
     //         return response(['errors' => $validator->errors()->all()], 200);
     //     }
@@ -118,7 +118,7 @@ class LoginController extends Controller
     //     }
     // }
 
-       
+
 
 
 
@@ -193,7 +193,7 @@ class LoginController extends Controller
      * @param  \App\Models\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function destroy()   
+    public function destroy()
     {
         //
     }

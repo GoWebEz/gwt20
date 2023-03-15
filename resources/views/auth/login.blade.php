@@ -24,7 +24,7 @@
                                         @csrf
                                         <div class="mb-2 UserName position-relative form-group">
                                             <label class="py-2 fs-6"></label>
-                                            <input type="text" placeholder="Username" name="user_name"
+                                            <input type="text" placeholder="Username" name="name"
                                                 class="form-control w-md-100 user-name" data-name="userName" value="">
                                             <div class="position-absolute"></div>
                                             <small class="error_empty"></small>

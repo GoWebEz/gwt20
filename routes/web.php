@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,8 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', function () { return view('home');})->name('home');
+    Route::get('/client',[ClientController::class,'index']);
 });
+// Route::group(['middleware' => 'auth'], function() {
+//     Route::get('/client', function () { return view('pages.client');})->name('client');
+// });
