@@ -88,7 +88,7 @@
                                                 Locations</a></li>
                                         <li class=""><a class="text-dark" href="/admin/global-setting">Global
                                                 Settings</a></li>
-                                        <li class=""><a class="text-dark" href="/admin/deviceRefreshLogs">Device
+                                        <li class=""><a class="text-dark" href="/admin/device-refresh-Log">Device
                                                 Refresh Logs</a></li>
                                         <li class=""><a class="text-dark"
                                                 href="/admin/water-conservation-log">Water Conservation Api
