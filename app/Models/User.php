@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\UserLocation;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,8 +18,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
-    ];
+        'name',
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'phone',
+        'designation_id'    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -26,7 +32,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
+        'pivot'
     ];
 
     /**
@@ -47,4 +55,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Designation::class, 'designation_id', 'id', 'name');
     }
+
+    public function userlocation()
+    {
+        return $this->belongsToMany(Location::class, 'user_location', 'user_id', 'location_id')->withPivot('is_active as is_active_user_location');
+    }
+
+    public function userMultiLocation()
+    {
+        return $this->belongsToMany(Location::class, 'user_location')->select('location_id', 'name', 'code')->where('category_id', '=', 1)->wherePivot('is_active', '1')->orderBy('code', 'ASC');
+    }
+
 }
+
