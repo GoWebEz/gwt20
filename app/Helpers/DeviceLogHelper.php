@@ -11,7 +11,7 @@ class DeviceLogHelper{
         ];
 
         $response = Http::withHeaders($headers)->get($apiURL);
-        $statusCode = $response->status();
+        $statusCode = $response->status();  
         $responseBody = json_decode($response->getBody(), true);
         return $responseBody;
     }
